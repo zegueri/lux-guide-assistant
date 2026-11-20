@@ -24,6 +24,8 @@
     "@electric-sql/pglite": "0.5.16",
     "@electric-sql/pglite-pgvector": "0.0.17",
     "@huggingface/transformers": "^4.3.2",
+    "@neon/config": "^1.14.5",
+    "@neon/env": "^2.1.8",
     "next": "16.4.6",
     "pg": "^8.23.1",
     "react": "19.3.0",
