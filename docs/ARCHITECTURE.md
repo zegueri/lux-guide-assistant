@@ -170,8 +170,13 @@ Réglages, d'après la documentation à jour (skill claude-api) :
   l'interface affiche un message clair ; le paramètre `fallbacks: "default"` (bêta
   `server-side-fallback-2026-07-01`) relance automatiquement la demande sur le modèle de
   repli recommandé par Anthropic ;
-- **cache de prompt** sur le prompt système (identique d'une question à l'autre) ;
-- `max_tokens` plafonné (démo publique : maîtrise du coût).
+- **pas de cache de prompt** : le prompt système (~500 tokens) est sous la taille minimale
+  qu'un préfixe doit atteindre pour être mis en cache, et les extraits changent à chaque
+  question ; un `cache_control` n'apporterait rien (à revoir si le prompt grossit) ;
+- `max_tokens` plafonné à 4 096 (réflexion comprise : démo publique, coût maîtrisé) ;
+- l'historique est renvoyé en texte simple (3 derniers échanges), sans les extraits des
+  tours précédents, pour limiter les tokens ; une question de relance (« et pour la
+  Belgique ? ») est complétée par la question précédente avant la recherche.
 
 ### 4.7 « Je ne sais pas » à deux niveaux
 
