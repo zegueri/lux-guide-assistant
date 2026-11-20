@@ -54,5 +54,5 @@ next-env.d.ts
 /.claude/
 .neon
 
+# dossier local de la CLI Vercel
 .vercel
-.env*
