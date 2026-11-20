@@ -15,7 +15,7 @@ export const RETRIEVAL_K = 6;
  * entre ~0,75 et ~0,90 ; à recalibrer si l'on change de modèle.
  */
 export const MIN_SIMILARITY: Record<string, number> = {
-  "local:Xenova/multilingual-e5-small": 0.82,
+  "local:Xenova/multilingual-e5-small": 0.845,
   "voyage:voyage-4": 0.35,
 };
 

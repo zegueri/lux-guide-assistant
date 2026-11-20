@@ -1,0 +1,347 @@
+{
+  "generatedAt": "2026-11-20T10:21:58.238Z",
+  "embeddingModel": "local:Xenova/multilingual-e5-small",
+  "chunkCount": 196,
+  "maxChars": 1200,
+  "threshold": 0.845,
+  "metrics": {
+    "hitAt1": 0.95,
+    "hitAt3": 1,
+    "hitAt5": 1,
+    "mrr": 0.975,
+    "inScopeAnswered": 1,
+    "outOfScopeRejected": 1,
+    "avgLatencyMs": 6.866361538461547
+  },
+  "minInScope": 0.8555909650204181,
+  "maxOutOfScope": 0.8424426190726239,
+  "questions": [
+    {
+      "id": "q01",
+      "theme": "Démarches",
+      "question": "Combien de temps ai-je pour déclarer mon arrivée à la commune ?",
+      "expected": [
+        "arrivee"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.9177836081723765,
+      "topPage": "FAQ → arrivee",
+      "aboveThreshold": true,
+      "latencyMs": 20.22680000000014
+    },
+    {
+      "id": "q02",
+      "theme": "Santé",
+      "question": "Est-ce que je dois avancer l'argent quand je vais chez le médecin ?",
+      "expected": [
+        "matricule",
+        "sante_pratique"
+      ],
+      "rank": 2,
+      "topSimilarity": 0.8555909650204181,
+      "topPage": "FAQ → assurance_sante",
+      "aboveThreshold": true,
+      "latencyMs": 8.18600000000015
+    },
+    {
+      "id": "q03",
+      "theme": "Santé",
+      "question": "Qu'est-ce que le délai de carence d'une mutuelle santé ?",
+      "expected": [
+        "assurance_sante"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8854378275497576,
+      "topPage": "assurance_sante",
+      "aboveThreshold": true,
+      "latencyMs": 8.14670000000001
+    },
+    {
+      "id": "q04",
+      "theme": "Démarches",
+      "question": "Comment obtenir un certificat LuxTrust sans payer trop cher ?",
+      "expected": [
+        "luxtrust"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8930365188209117,
+      "topPage": "luxtrust",
+      "aboveThreshold": true,
+      "latencyMs": 19.213899999999967
+    },
+    {
+      "id": "q05",
+      "theme": "Logement",
+      "question": "Quels papiers préparer avant de visiter un appartement à louer ?",
+      "expected": [
+        "recherche_logement"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8637762313289244,
+      "topPage": "recherche_logement",
+      "aboveThreshold": true,
+      "latencyMs": 6.445300000000088
+    },
+    {
+      "id": "q06",
+      "theme": "Logement",
+      "question": "Je n'ai pas de voiture : comment choisir dans quelle commune habiter ?",
+      "expected": [
+        "choisir_commune"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.875344108841467,
+      "topPage": "FAQ → choisir_commune",
+      "aboveThreshold": true,
+      "latencyMs": 6.971900000000005
+    },
+    {
+      "id": "q07",
+      "theme": "Frontaliers",
+      "question": "Si j'habite en France, dans quel pays mon salaire luxembourgeois est-il imposé ?",
+      "expected": [
+        "frontalier"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.9192173143935936,
+      "topPage": "FAQ → frontalier",
+      "aboveThreshold": true,
+      "latencyMs": 7.340200000000095
+    },
+    {
+      "id": "q08",
+      "theme": "Logement",
+      "question": "Comment être sûr de récupérer ma caution à la fin de la location ?",
+      "expected": [
+        "bail"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8684663200159148,
+      "topPage": "bail",
+      "aboveThreshold": true,
+      "latencyMs": 5.3491999999998825
+    },
+    {
+      "id": "q09",
+      "theme": "Logement",
+      "question": "Peut-on avoir une TVA réduite pour l'achat de sa résidence principale ?",
+      "expected": [
+        "achat"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8759211671587342,
+      "topPage": "FAQ → achat",
+      "aboveThreshold": true,
+      "latencyMs": 4.992500000000064
+    },
+    {
+      "id": "q10",
+      "theme": "Impôts",
+      "question": "Quelle classe d'impôt s'applique quand les deux conjoints travaillent ?",
+      "expected": [
+        "impots_classes"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8984546419274528,
+      "topPage": "FAQ → impots_classes",
+      "aboveThreshold": true,
+      "latencyMs": 6.043599999999969
+    },
+    {
+      "id": "q11",
+      "theme": "Impôts",
+      "question": "Quelles dépenses puis-je déduire de mes revenus imposables ?",
+      "expected": [
+        "deductions"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8699664861063716,
+      "topPage": "deductions",
+      "aboveThreshold": true,
+      "latencyMs": 5.4780000000000655
+    },
+    {
+      "id": "q12",
+      "theme": "Impôts",
+      "question": "À quoi sert un contrat de prévoyance-vieillesse 111bis ?",
+      "expected": [
+        "conseil_fiscal"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8900841343503174,
+      "topPage": "conseil_fiscal",
+      "aboveThreshold": true,
+      "latencyMs": 4.978399999999965
+    },
+    {
+      "id": "q13",
+      "theme": "Impôts",
+      "question": "Qui peut profiter du régime fiscal des impatriés ?",
+      "expected": [
+        "impatries"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.889316995862069,
+      "topPage": "impatries",
+      "aboveThreshold": true,
+      "latencyMs": 5.4074999999998
+    },
+    {
+      "id": "q14",
+      "theme": "Impôts",
+      "question": "Les intérêts de mon crédit immobilier sont-ils déductibles ?",
+      "expected": [
+        "interets"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.9123234383025356,
+      "topPage": "FAQ → interets",
+      "aboveThreshold": true,
+      "latencyMs": 5.509399999999914
+    },
+    {
+      "id": "q15",
+      "theme": "Travail",
+      "question": "Comment fonctionne l'indexation automatique des salaires ?",
+      "expected": [
+        "cout_vie"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.9003288000333016,
+      "topPage": "FAQ → cout_vie",
+      "aboveThreshold": true,
+      "latencyMs": 5.211999999999989
+    },
+    {
+      "id": "q16",
+      "theme": "Famille",
+      "question": "Comment inscrire mon enfant à l'école publique luxembourgeoise ?",
+      "expected": [
+        "ecole"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8910266615637941,
+      "topPage": "ecole",
+      "aboveThreshold": true,
+      "latencyMs": 5.166300000000092
+    },
+    {
+      "id": "q17",
+      "theme": "Famille",
+      "question": "À quoi sert le chèque-service accueil pour la crèche ?",
+      "expected": [
+        "garde"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.9191970713839198,
+      "topPage": "FAQ → garde",
+      "aboveThreshold": true,
+      "latencyMs": 5.647699999999986
+    },
+    {
+      "id": "q18",
+      "theme": "Transports",
+      "question": "Dois-je échanger mon permis de conduire européen ?",
+      "expected": [
+        "permis"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.9037254395323217,
+      "topPage": "permis",
+      "aboveThreshold": true,
+      "latencyMs": 5.496699999999919
+    },
+    {
+      "id": "q19",
+      "theme": "Transports",
+      "question": "Le train est-il gratuit même en première classe ?",
+      "expected": [
+        "transport"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.8984948240942662,
+      "topPage": "FAQ → transport",
+      "aboveThreshold": true,
+      "latencyMs": 5.194600000000037
+    },
+    {
+      "id": "q20",
+      "theme": "Démarches",
+      "question": "Combien d'années faut-il pour obtenir la nationalité luxembourgeoise ?",
+      "expected": [
+        "nationalite"
+      ],
+      "rank": 1,
+      "topSimilarity": 0.9171627638270883,
+      "topPage": "nationalite",
+      "aboveThreshold": true,
+      "latencyMs": 6.028999999999996
+    },
+    {
+      "id": "h01",
+      "theme": "Hors sujet",
+      "question": "Quelle est la capitale de l'Australie ?",
+      "expected": [],
+      "rank": null,
+      "topSimilarity": 0.7882968692071973,
+      "topPage": "choisir_commune",
+      "aboveThreshold": false,
+      "latencyMs": 5.015099999999848
+    },
+    {
+      "id": "h02",
+      "theme": "Hors sujet",
+      "question": "Donne-moi une recette de tarte aux pommes.",
+      "expected": [],
+      "rank": null,
+      "topSimilarity": 0.8074038143514016,
+      "topPage": "administration",
+      "aboveThreshold": false,
+      "latencyMs": 5.492100000000164
+    },
+    {
+      "id": "h03",
+      "theme": "Hors sujet",
+      "question": "Qui a gagné la Coupe du monde de football en 2018 ?",
+      "expected": [],
+      "rank": null,
+      "topSimilarity": 0.7732356190681512,
+      "topPage": "frontalier",
+      "aboveThreshold": false,
+      "latencyMs": 5.032400000000052
+    },
+    {
+      "id": "h04",
+      "theme": "Hors sujet",
+      "question": "Comment écrire une boucle for en Python ?",
+      "expected": [],
+      "rank": null,
+      "topSimilarity": 0.8174524524865133,
+      "topPage": "choisir_commune",
+      "aboveThreshold": false,
+      "latencyMs": 6.552599999999984
+    },
+    {
+      "id": "h05",
+      "theme": "Hors sujet",
+      "question": "Quel temps fera-t-il demain ?",
+      "expected": [],
+      "rank": null,
+      "topSimilarity": 0.8348071678898965,
+      "topPage": "choisir_commune",
+      "aboveThreshold": false,
+      "latencyMs": 4.627100000000155
+    },
+    {
+      "id": "h06",
+      "theme": "Hors sujet",
+      "question": "Comment obtenir un visa pour travailler au Japon ?",
+      "expected": [],
+      "rank": null,
+      "topSimilarity": 0.8424426190726239,
+      "topPage": "recherche_logement",
+      "aboveThreshold": false,
+      "latencyMs": 4.770399999999881
+    }
+  ]
+}
