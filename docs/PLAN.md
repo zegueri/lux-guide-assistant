@@ -56,4 +56,4 @@ verte sur GitHub.
 - README français / anglais, schéma, compromis, résultats, lancement, lien de démo.
 - Deux lignes de CV.
 
-**Point d'arrêt** : l'URL publique répond à une question avec ses sources.
+**Point d'arrêt** : l'URL publique répond à une question avec ses sources. ✅ Fait : https://lux-guide-assistant.vercel.app (Claude Haiku 5.5, ~0,001 $ par question).
