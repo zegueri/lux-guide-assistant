@@ -38,9 +38,10 @@ describe("buildMessages", () => {
     expect(messages).toHaveLength(1);
     const last = messages[0]!;
     expect(last.role).toBe("user");
-    if (typeof last.content === "string") throw new Error("contenu structuré attendu");
-    expect(last.content.map((b) => b.type)).toEqual(["search_result", "text"]);
-    expect(last.content.at(-1)).toEqual({ type: "text", text: "Le bus est-il gratuit ?" });
+    const content = last.content;
+    if (!Array.isArray(content)) throw new Error("contenu structuré attendu");
+    expect(content.map((b) => b.type)).toEqual(["search_result", "text"]);
+    expect(content.at(-1)).toEqual({ type: "text", text: "Le bus est-il gratuit ?" });
   });
 
   it("reprend l'historique en texte et le fait commencer par l'utilisateur", () => {
