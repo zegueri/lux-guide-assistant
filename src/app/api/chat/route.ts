@@ -142,11 +142,11 @@ export async function POST(request: Request): Promise<Response> {
             system: SYSTEM_PROMPT,
             messages: buildMessages(history, question, chunks),
             // Haiku 5.5 réfléchit par défaut (réflexion adaptative) ; l'effort règle la
-            // profondeur (défaut « medium »). « low » suffit pour répondre à partir
-            // d'extraits fournis, et réduit coût et latence.
+            // profondeur. Mesuré : en « low », Haiku résume puis recopie le passage cité
+            // (doublons) ; « medium » (le défaut) rédige proprement pour ~0,0009 $.
             // Pas de paramètre `fallbacks` : Haiku 5.5 n'a pas de repli côté serveur.
             // Un refus (stop_reason "refusal") est traité dans toChatEvents.
-            output_config: { effort: "low" },
+            output_config: { effort: "medium" },
           },
           // Si l'utilisateur ferme la page ou clique « Arrêter », on coupe l'appel.
           { signal: request.signal },

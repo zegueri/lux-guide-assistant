@@ -164,12 +164,14 @@ Réglages, d'après la documentation à jour (skill claude-api) :
 
 - modèle `claude-haiku-5-5`, **streaming** (`client.beta.messages.stream`). Haiku plutôt
   qu'Opus : pour rédiger une réponse à partir d'extraits fournis, le plus petit modèle
-  suffit, pour environ 0,04 centime par question au lieu de 1 à 2 centimes (tarifs publics,
-  ~2 000 tokens en entrée et ~400 en sortie). Le modèle tient dans une constante (`MODEL`) :
+  suffit, pour environ 0,09 centime par question (mesuré), au lieu de 1 à 2 centimes estimés
+  avec Opus. Le modèle tient dans une constante (`MODEL`) :
   passer à Sonnet ou Opus est un changement d'une ligne ;
-- **niveau d'effort `low`** : la réflexion adaptative est active par défaut sur Haiku 5.5,
-  et l'effort règle sa profondeur ; `low` suffit ici et réduit coût et latence (le défaut
-  est `medium`) ;
+- **niveau d'effort `medium`** (le défaut de Haiku 5.5) : la réflexion adaptative est
+  active, et l'effort règle sa profondeur. Mesuré sur la démo : en `low`, Haiku résumait
+  une idée puis recopiait mot pour mot le passage cité (doublons) ; en `medium`, la réponse
+  est propre et citée, pour ~0,0009 $ par question (~3 500 tokens en entrée, ~1 000 en
+  sortie réflexion comprise), soit environ 5 500 questions pour 5 $ ;
 - **refus** : si `stop_reason === "refusal"`, la réponse partielle est jetée et
   l'interface affiche un message clair. Haiku 5.5 n'a pas de repli automatique côté
   serveur (paramètre `fallbacks`), donc rien n'est relancé ;

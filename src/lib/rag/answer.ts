@@ -7,8 +7,8 @@ import type { RetrievedChunk } from "./types";
 
 /**
  * Claude Haiku 5.5 : le modèle le plus économique de la gamme actuelle. Pour répondre à
- * partir d'extraits fournis, il suffit largement, pour un coût ~40 fois plus faible
- * qu'Opus 5.5 (environ 0,04 centime par question au lieu de 1 à 2 centimes).
+ * partir d'extraits fournis, il suffit largement, pour un coût bien plus faible
+ * qu'Opus 5.5 (environ 0,09 centime par question, mesuré sur la démo).
  */
 export const MODEL = "claude-haiku-5-5";
 
