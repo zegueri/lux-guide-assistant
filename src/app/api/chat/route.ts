@@ -88,11 +88,9 @@ export async function POST(request: Request): Promise<Response> {
     console.error(error);
     return jsonError(500, "La configuration du serveur est invalide.");
   }
-  if (!config.anthropicApiKey) {
-    return jsonError(503, "ANTHROPIC_API_KEY n'est pas configurée sur le serveur.");
-  }
 
-  // 2. Recherche des passages.
+  // 2. Recherche des passages (avant de vérifier la clé : une question hors du guide
+  //    reçoit « je ne sais pas » sans jamais avoir besoin de Claude).
   let retrieval: RetrievalResult;
   try {
     const db = await getSharedDb(config.databaseUrl);
@@ -107,9 +105,12 @@ export async function POST(request: Request): Promise<Response> {
     return jsonError(503, "La recherche dans le guide est indisponible pour le moment.");
   }
 
-  anthropic ??= new Anthropic({ apiKey: config.anthropicApiKey });
-  const client = anthropic;
   const { chunks, enoughContext } = retrieval;
+  const apiKey = config.anthropicApiKey;
+  if (enoughContext && !apiKey) {
+    return jsonError(503, "ANTHROPIC_API_KEY n'est pas configurée sur le serveur.");
+  }
+  const client = apiKey ? (anthropic ??= new Anthropic({ apiKey })) : null;
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream<Uint8Array>({
@@ -124,7 +125,7 @@ export async function POST(request: Request): Promise<Response> {
 
       try {
         // 3. Rien d'assez proche : réponse honnête, sans appel payant.
-        if (!enoughContext) {
+        if (!enoughContext || !client) {
           send({ type: "sources", sources: [] });
           send({ type: "text-start" });
           send({ type: "text", text: NO_CONTEXT_MESSAGE });
