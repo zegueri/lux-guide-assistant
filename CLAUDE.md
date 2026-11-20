@@ -36,7 +36,10 @@ npm run eval         # mesure hit@k / MRR de la recherche sur eval/questions.jso
 - **Embeddings** : la question et les documents doivent venir du même modèle. Changer
   `EMBEDDING_PROVIDER` impose `npm run ingest`.
 - **Base** : `DATABASE_URL` vide = PGlite local dans `.data/pglite` ; sinon Postgres
-  (Neon). Le SQL doit rester compatible avec les deux.
+  (Neon). Le SQL doit rester compatible avec les deux. PGlite n'accepte **qu'un seul
+  processus** à la fois : arrêter `npm run dev` avant `npm run ingest`, `search` ou `eval`.
+- **Seuil « je ne sais pas »** (`MIN_SIMILARITY` dans `src/lib/rag/retrieve.ts`) : propre
+  au modèle d'embeddings ; le recalibrer avec `npm run eval` après tout changement.
 - **Langue** : interface, prompts et réponses en français. Commentaires de code en
   français, identifiants en anglais.
 - **Next.js 16** : `cacheComponents` est activé ; pas d'export `runtime` dans les routes.
