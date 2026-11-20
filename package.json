@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.11.0",
-    "@electric-sql/pglite": "^0.5.17",
+    "@electric-sql/pglite": "0.5.16",
+    "@electric-sql/pglite-pgvector": "0.0.17",
     "@huggingface/transformers": "^4.3.2",
     "next": "16.4.6",
     "pg": "^8.23.1",
@@ -32,12 +33,14 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@next/env": "16.4.6",
     "@playwright/test": "^1.65.1",
     "@tailwindcss/turbopack": "4.3.3",
     "@types/node": "^24.19.2",
     "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cheerio": "^1.2.0",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "robots-parser": "^3.0.1",

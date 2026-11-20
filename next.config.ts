@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     "@electric-sql/pglite",
     "@huggingface/transformers",
     "onnxruntime-node",
+    "@electric-sql/pglite-pgvector",
   ],
 
   // Sur Vercel (Linux x64), on n'embarque pas les binaires ONNX des autres
