@@ -99,7 +99,7 @@ describe("toChatEvents", () => {
     expect(events.at(-1)).toEqual({
       type: "done",
       reason: "complete",
-      usage: { inputTokens: 1500, outputTokens: 400, costUsd: 0.014 },
+      usage: { inputTokens: 1500, outputTokens: 400, costUsd: 0.00035 },
     });
   });
 
@@ -131,8 +131,8 @@ describe("toSourceInfo", () => {
 });
 
 describe("estimateCostUsd", () => {
-  it("applique le tarif d'Opus 5.5 (4 $ / 20 $ par million de tokens)", () => {
-    expect(estimateCostUsd(1_000_000, 0)).toBe(4);
-    expect(estimateCostUsd(0, 1_000_000)).toBe(20);
+  it("applique le tarif de Haiku 5.5 (0,10 $ / 0,50 $ par million de tokens)", () => {
+    expect(estimateCostUsd(1_000_000, 0)).toBe(0.1);
+    expect(estimateCostUsd(0, 1_000_000)).toBe(0.5);
   });
 });

@@ -30,9 +30,9 @@ npm run eval         # mesure hit@k / MRR de la recherche sur eval/questions.jso
   `.env.example` (sans valeur) et dans `src/lib/config.ts` (validation zod).
 - **TypeScript strict** : pas de `any`, pas de `@ts-ignore`. Les types de l'API Claude
   viennent du SDK (`Anthropic.Beta...`), pas de redéfinition maison.
-- **Claude** : SDK officiel `@anthropic-ai/sdk`, modèle `claude-opus-5-5`, streaming,
+- **Claude** : SDK officiel `@anthropic-ai/sdk`, modèle `claude-haiku-5-5` (constante `MODEL`), streaming,
   `output_config.effort`, gestion de `stop_reason === "refusal"`. Ne pas utiliser
-  `budget_tokens` ni `thinking: {type: "disabled"}` (refusés par Opus 5.5).
+  `budget_tokens` ni `thinking: {type: "disabled"}` (refusés par les modèles actuels). Pas de `fallbacks` avec Haiku 5.5.
 - **Embeddings** : la question et les documents doivent venir du même modèle. Changer
   `EMBEDDING_PROVIDER` impose `npm run ingest`.
 - **Base** : `DATABASE_URL` vide = PGlite local dans `.data/pglite` ; sinon Postgres

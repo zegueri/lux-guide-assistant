@@ -34,7 +34,7 @@ flowchart LR
     U[Interface React<br/>chat en streaming] -->|POST /api/chat| R[Route Handler]
     R -->|1. embedding de la question| D2[Embeddings]
     R -->|2. k plus proches voisins| E
-    R -->|3. passages = blocs search_result| L[API Claude<br/>claude-opus-5-5]
+    R -->|3. passages = blocs search_result| L[API Claude<br/>claude-haiku-5-5]
     L -->|4. texte + citations en streaming| R
     R -->|NDJSON| U
   end

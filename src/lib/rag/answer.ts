@@ -5,10 +5,15 @@ import { buildHighlightUrl } from "./highlight";
 import { sourceTitle } from "./prompt";
 import type { RetrievedChunk } from "./types";
 
-export const MODEL = "claude-opus-5-5";
+/**
+ * Claude Haiku 5.5 : le modèle le plus économique de la gamme actuelle. Pour répondre à
+ * partir d'extraits fournis, il suffit largement, pour un coût ~40 fois plus faible
+ * qu'Opus 5.5 (environ 0,04 centime par question au lieu de 1 à 2 centimes).
+ */
+export const MODEL = "claude-haiku-5-5";
 
-/** Tarif public de claude-opus-5-5, en dollars par million de tokens. */
-const PRICE_PER_MTOK = { input: 4, output: 20 } as const;
+/** Tarif public de claude-haiku-5-5 (requêtes de moins de 100K tokens), en $ par million. */
+const PRICE_PER_MTOK = { input: 0.1, output: 0.5 } as const;
 
 export const REFUSAL_MESSAGE =
   "Je ne peux pas répondre à cette demande. Posez-moi une question sur l'installation " +

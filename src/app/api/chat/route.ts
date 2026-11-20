@@ -141,13 +141,12 @@ export async function POST(request: Request): Promise<Response> {
             max_tokens: MAX_OUTPUT_TOKENS,
             system: SYSTEM_PROMPT,
             messages: buildMessages(history, question, chunks),
-            // Opus 5.5 réfléchit toujours (réflexion adaptative) ; l'effort règle la
-            // profondeur. « low » suffit pour répondre à partir d'extraits fournis.
+            // Haiku 5.5 réfléchit par défaut (réflexion adaptative) ; l'effort règle la
+            // profondeur (défaut « medium »). « low » suffit pour répondre à partir
+            // d'extraits fournis, et réduit coût et latence.
+            // Pas de paramètre `fallbacks` : Haiku 5.5 n'a pas de repli côté serveur.
+            // Un refus (stop_reason "refusal") est traité dans toChatEvents.
             output_config: { effort: "low" },
-            // Si les garde-fous du modèle refusent, l'API relance la demande sur le
-            // modèle de repli recommandé par Anthropic.
-            betas: ["server-side-fallback-2026-07-01"],
-            fallbacks: "default",
           },
           // Si l'utilisateur ferme la page ou clique « Arrêter », on coupe l'appel.
           { signal: request.signal },
